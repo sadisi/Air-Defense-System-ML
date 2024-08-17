@@ -48,10 +48,11 @@ def draw_labels(boxes, confidences, class_ids, classes, frame):
         label = str(classes[class_ids[i]])
         confidence = confidences[i]
 
-        if label in ["missile", "rocket", "projectile", "airplane", "plane"]:  # model labels
-            color = (0, 0, 255)  # Red color for missiles and airplanes
-        elif label in ["car", "bus", "van", "bicycle", "vehicle", "ship"]:
-            color = (255, 0, 0)  # Blue color for non-living objects
+        # Color the box based on the detected object class
+        if label in ["missile", "rocket", "projectile", "airplane","plane"]:  # model labels
+            color = (0, 0, 255)  # Red color for missiles
+        if label in ["car", "bus", "van" ,"bicycle", "vehicle", "ship"]:
+            color = (255, 0, 0) # blue colr for nonliving objects
         else:
             color = (0, 255, 0)  # Green for other objects
 
