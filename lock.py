@@ -64,7 +64,7 @@ def draw_labels(boxes, confidences, class_ids, classes, frame):
         # Color the box based on the detected object class
         if label in ["missile", "rocket", "airplane", "plane"]:  # model labels
             color = (0, 0, 255)  # Red color for missiles and airplanes
-            if label in ["airplane", "plane"]:
+            if label in ["missile", "rocket", "airplane", "plane"]:
                 play_warning_sound()
 
                 # Draw the X and Y axis for locking onto the plane
